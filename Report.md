@@ -81,9 +81,9 @@
 
 3. Different in-order CPU models on gem5:
    
-     i. SimpleCPU:
-         * BaseSimpleCPU:  
-         * AtomicSimpleCPU:
+     i. SimpleCPU:  
+      * BaseSimpleCPU:  
+      * AtomicSimpleCPU:
      
      >This version of SimpleCPU uses atomic memory accesses. It derives from BaseSimpleCPU and implements functions to read and write memory, as well as to tick,            meaning what happens in every CPU cycle. Also, it estimates the overall cache access time using the latency estimates from the atomic accesses. Lastly, the            AtomicSimpleCPU defines the port that is used to hook up to memory, and connects the CPU to the cache.  
        
