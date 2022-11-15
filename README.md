@@ -79,6 +79,21 @@
         system.cpu_cluster.cpus.branchPred.indirectMisses          147                       # Number of indirect misses.
         ```
 
-3. ftjtj
+3. htryjtyjd
+
+   a. Commands for the `fibonacci.c` file:
+
+      * MinorCPU
+         ``` 
+            $ ./build/ARM/gem5.opt -d fib_results_MinorCPU configs/example/se.py --cpu-type=MinorCPU --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
+          ```
+      * TimingSimpleCPU
+        ```
+           $ ./build/ARM/gem5.opt -d fib_results_TimingSimpleCPU configs/example/se.py --cpu-type=TimingSimpleCPU --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
+         ```
+
+   b. srhttjdtn
+
+   c. srthdhrg
 
 
