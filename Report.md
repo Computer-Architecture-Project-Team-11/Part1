@@ -81,14 +81,14 @@
 
 3. Different in-order CPU models on gem5:
    
-     i. SimpleCPU:  
-        * BaseSimpleCPU:
+     i. SimpleCPU:    
+        * BaseSimpleCPU:  
         * AtomicSimpleCPU:
      
-     >This version of SimpleCPU uses atomic memory accesses. It derives from BaseSimpleCPU and implements functions to read and write memory, as well as to tick,            meaning what happens in every CPU cycle. Also, it estimates the overall cache access time using the latency estimates from the atomic accesses. Lastly, the            AtomicSimpleCPU defines the port that is used to hook up to memory, and connects the CPU to the cache.
+     >This version of SimpleCPU uses atomic memory accesses. It derives from BaseSimpleCPU and implements functions to read and write memory, as well as to tick,            meaning what happens in every CPU cycle. Also, it estimates the overall cache access time using the latency estimates from the atomic accesses. Lastly, the            AtomicSimpleCPU defines the port that is used to hook up to memory, and connects the CPU to the cache.  
         * TimingSimpleCPU:
       
-    ii.Minor CPU:
+    ii. Minor CPU:
     >This in-order processor model has a fixed pipeline, but its data structures and execute behaviour are configurable. It provides a framework to match micro-            architecturally the model with similar processor which has strict in-order execution behaviour and visualises the position of an instruction in the pipeline            through the MinorTrace/minorview.py format/too. 
 
    a. Commands for the `fibonacci.c` file:
