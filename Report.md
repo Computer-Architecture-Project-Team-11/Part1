@@ -175,8 +175,8 @@
            $ ./build/ARM/gem5.opt -d fib_results_MinorCPUSimpleMemory configs/example/se.py --cpu-type=MinorCPU --mem-type=SimpleMemory --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
           ```
            * The instruction rate has decreased a lot in with the use of the "SimpleMemory" type. Specifically, simulator instruction rate before=213505  and after=151692. (respective decreament for the ops rate)
-           * The simulated time seems to be slighttly increamented. Number of seconds simulated before = 0.000333 and after = 0.000326. 
-           * Finally this memory type seems to have an small affect on the indirect misses since they are increamented by 1.
+           * The simulated time seems to be slighttly increased. Number of seconds simulated before = 0.000333 and after = 0.000326. 
+           * Finally this memory type seems to have an small affect on the indirect misses since they are increased by 1.
 
       * Different Operational Frequency:
          * For the TimingSimpleCPU we set the frequency to 4GHz:
@@ -187,7 +187,7 @@
             ```
             $ ../build/ARM/gem5.opt -d fib_results_MinorCPU4GHz configs/example/se.py --cpu-type=MinorCPU --cpu-clock=4GHz --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
              ```
-          The operational frequency refers to the processor's operational clock cycles per second. This means that by increamenting the frequency the execution must be faster. We can confirm that by the results on the `statistics.txt` file. More specifically we observed subduplication of the total simulated time in both CPU models with the quadruplication of the operational frequency.
+          The operational frequency refers to the processor's operational clock cycles per second. This means that by increasing the frequency the execution must be faster. We can confirm that by the results on the `statistics.txt` file. More specifically we observed subduplication of the total simulated time in both CPU models with the quadruplication of the operational frequency.
         
 Resources:
 * [Committed instructions differencies](https://stackoverflow.com/questions/65010636/difference-between-committed-instructions-and-committed-ops)
