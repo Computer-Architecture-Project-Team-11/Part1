@@ -72,10 +72,21 @@
       * sim_insts: the number of instructions that were simulated
       * host_inst_rate: the rate of instructions simulated per second
 
-   c. From `statistics.txt` the number o committed instructions is 5027.
+   c. From `statistics.txt` the number of committed instructions is 5027 and of committed operations is 5831.
 
        
        system.cpu_cluster.cpus.committedInsts           5027                       # Number of instructions committed
+
+       system.cpu_cluster.cpus.committedOps             5831                       # Number of ops (including micro ops) committed
+
+     
+   The reason that they are not equal is that "committedInsts" is the architectural number of assembly instructions executed while "commmittedOps" is the number of micro-operations. Each instruction can expand to multiple microoperations, so this number is always greater or equal than committedInsts.
+
+    The number of instructions simulated is again 5027:
+    
+        sim_insts                                        5027                       # Number of instructions simulated
+
+    The fact that the simulated instructions and committed instruction are the same signifies that all instructions are committed. An instruction commits only if it and all instructions before it have completed successfully.
        
 
    d.  from `starter_se.py` and because the type of the CPU is "minor" the L2 Cache class is "devices.L2".
@@ -125,7 +136,13 @@
          ```
 
    b. srhttjdtn
-
    c. srthdhrg
+
+
+Resources:
+* [Committed instructions differencies](https://stackoverflow.com/questions/65010636/difference-between-committed-instructions-and-committed-ops)
+* [Committed instructions](https://my.eng.utah.edu/~cs6810/pres/12-6810-09.pdf)
+* [CPU Models](https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU#basesimplecpu)
+* 
 
 
