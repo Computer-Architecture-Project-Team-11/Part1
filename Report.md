@@ -156,7 +156,7 @@
      * Similarities:
        * sim_freq: 1000000000000 for both CPUs
        * host_mem_usage: 674144 for TimingSimpleCPU and 678752 for MinorCPU
-       * Number of instructions commited: 445920 for TimingSimpleCPU and 445973 for MinorCPU
+       * Number of instructions commited: 445920 for TimingSimpleCPU and 445973 for MinorCPU  
      The differencies are mostly related to time. They are justified considering the fact that TimingSimpleCPU lacks in speed in comparison to MinorCPU.
      The similarities are also justified because they concern parameters that are controled by either the program or the intruction given.
    c. srthdhrg
