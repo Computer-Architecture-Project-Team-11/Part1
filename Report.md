@@ -82,12 +82,17 @@
 3. Different in-order CPU models on gem5:
    
      i. SimpleCPU:  
-      * BaseSimpleCPU:  
+      * BaseSimpleCPU: 
+
+    > This version of SimpleCPU is a single cycle CPU which means it can execute only one instruction in a cycle. It can be inheritedd by AtomicSimpleCPU and TimingSimpleCPU. It can not be run on its own. One of the inheriting classes, either AtomicSimpleCPU or TimingSimpleCPU must be used. BaseSimpleCPU defines functions for checking for interrupts, setting up a fetch request, handling pre-execute setup, handling post-execute actions, and advancing the PC to the next instruction and holds architected state, stats common across the SimpleCPU models. It is also responsible for the ExecContext interface which reovides information regarding the status of the execution.
+ 
       * AtomicSimpleCPU:
      
      >This version of SimpleCPU uses atomic memory accesses. It derives from BaseSimpleCPU and implements functions to read and write memory, as well as to tick,            meaning what happens in every CPU cycle. Also, it estimates the overall cache access time using the latency estimates from the atomic accesses. Lastly, the            AtomicSimpleCPU defines the port that is used to hook up to memory, and connects the CPU to the cache.  
        
       * TimingSimpleCPU:
+
+    >This version of SimpleCPU uses timing memory accesses. Timing accesses are the most detailed access but they lack in speed (delay). With the sending of a request function at some time, a response function or a number of functions are scheduled at some time in the future to be executed. It derives from BaseSimpleCPU and and implements the same set of functions as AtomicSimpleCPU. It defines the port that is used to hook up to memory, and connects the CPU to the cache. It also defines the necessary functions for handling the response from memory to the accesses sent out. If the response is a NACK the procedure gets repeated.
       
     ii. Minor CPU:
     >This in-order processor model has a fixed pipeline, but its data structures and execute behaviour are configurable. It provides a framework to match micro-            architecturally the model with similar processor which has strict in-order execution behaviour and visualises the position of an instruction in the pipeline            through the MinorTrace/minorview.py format/too. 
