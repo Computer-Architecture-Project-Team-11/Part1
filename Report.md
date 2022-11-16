@@ -195,9 +195,15 @@ Resources:
 * [CPU Models](https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU#basesimplecpu)
 
 
-Overall review:
-We found that this lab exercise was educating on many levels.  
-Firstly, we got acquainted with GitHub and Markdown language, which seems to be a usefull skill to possess for our future projects and a great way to organize our work.  
-Also, we were able to understand the effect of using different CPU models and changing different parameters can have on the execution of a program, mainly on the simulation time. 
+## Overall review:
+
+We found that this lab exercise was educating on many levels:
+* Firstly, we got acquainted with GitHub and Markdown language, which seems to be a usefull skill to possess for our future projects and a great way to organize our work.  
+* Also, we were able to understand the effect of using different CPU models and changing different parameters can have on the execution of a program, mainly on the simulation time. 
+* First contact with gem5. We fimiliarized ourselves with its basic features and possibilities, observed the things happening in the back-ground will executing a program and how the whole procedure can be affected by changing different parameters like the CPU models or the operational frequency.
+* We also had the chance to see in action a lot of procedures and results we had discussed in the lectures such as the L1 and L2 relation regarding the misses of the first and the accesses to the second.
+* The only difficulty we faced was finding the appropriate argument to add to the command in terminal in order to change a specfic parameter. It whould be very helpful if the parameters and their respective arguments where all gathered in one place.
+* Finally, the assignment pdf was really detailed and instructive. 
+
 
 
