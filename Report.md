@@ -56,8 +56,11 @@
           sim_freq                                 1000000000000                       # Frequency of simulated ticks
          ```
       * memory type
-      * number of memory channels
-      * from `config.ini` the number of memory ranks per channel is 2
+      * from `config.ini` we can see that there are 2 memory channels:
+         ```
+         memories=system.mem_ctrls0 system.mem_ctrls1
+         ```
+      * from `config.ini` the number of memory ranks per channel is 2 for both memory channels
          ```
           [system.mem_ctrls0]/[system.mem_ctrls1]
           ranks_per_channel=2
@@ -69,15 +72,28 @@
       * sim_insts: the number of instructions that were simulated
       * host_inst_rate: the rate of instructions simulated per second
 
-   c.  ```
+   c. From `statistics.txt` the number o committed instructions is 5027.
+
+       
        system.cpu_cluster.cpus.committedInsts           5027                       # Number of instructions committed
-       ```
+       
 
    d.  from `starter_se.py` and because the type of the CPU is "minor" the L2 Cache class is "devices.L2".
-       The number of times that the L2 cache was accessed is equal to the muner of times L1 was accessed and a miss occured which is 147.
-       ```
+       From `statistics.tct` the L2 accesses are the following:
+
+       
+       system.cpu_cluster.l2.overall_accesses::.cpu_cluster.cpus.inst          327                       # number of overall (read+write) accesses
+
+       system.cpu_cluster.l2.overall_accesses::.cpu_cluster.cpus.data          147                       # number of overall (read+write) accesses
+
+       system.cpu_cluster.l2.overall_accesses::total          474                       # number of overall (read+write) accesses
+        
+
+      The number of times that the L2 cache was accessed is equal to the muner of times L1 was accessed and a miss occured which is 147 (as far as data is concerned):
+
+       
         system.cpu_cluster.cpus.branchPred.indirectMisses          147                       # Number of indirect misses.
-        ```
+        
 
 3. Different in-order CPU models on gem5:
    
