@@ -160,7 +160,29 @@
     
     The differencies are mostly related to time. They are justified considering the fact that TimingSimpleCPU lacks in speed in comparison to MinorCPU.  
     The similarities are also justified because they concern a) the frequency which is determined by us, b) the memory used by the host and the number of instructions commited which depend on our program and are not influenced by the CPU.
-   c. srthdhrg
+
+   c. Changed parameters and comparison of the 2 CPU models:
+   
+      * Different memory type:
+        * For the TimingSimpleCPU we used the "LPDDR2_S4_1066_1x32" memory type:
+          ```
+          $ ./build/ARM/gem5.opt -d fib_results_TimingSimpleCPULPDDR2_S4_1066_1x32 configs/example/se.py --cpu-type=MinorCPU --mem-type=LPDDR2_S4_1066_1x32 --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
+          ```
+          * There is a small increament in the time of execution for while using the "LPDDR2_S4_1066_1x32" memory type. Number of seconds simulated before = 0.000692 and after = 0.000700. 
+          * Also a decreament in the instruction rate is noticed: Simulator instruction rate before=574316  and after=561871. 
+        * For the MinorCPU we used the "SimpleMemory" memory type:
+          ```
+           $ ./build/ARM/gem5.opt -d fib_results_MinorCPUSimpleMemory configs/example/se.py --cpu-type=MinorCPU --mem-type=SimpleMemory --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
+          ```
+           * The instruction rate has decreated a lot in with the use of the "SimpleMemory" type. Specifically, simulator instruction rate before=213505  and after=151692. (respective decreament for the ops rate)
+           * The simulated time seems to be slighttly increamented. Number of seconds simulated before = 0.000333 and after = 0.000326. 
+           * Finally this memory type seems to have an samll affect on the indirect misses since they are increamented by 1.
+
+      * Different Operational Frequency:
+         * For the TimingSimpleCPU we used
+         * For the MinorCPU we used
+
+
 
 
 Resources:
