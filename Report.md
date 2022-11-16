@@ -111,7 +111,7 @@
      i. SimpleCPU:  
       * BaseSimpleCPU: 
 
-    > This version of SimpleCPU is a single cycle CPU which means it can execute only one instruction in a cycle. It can be inheritedd by AtomicSimpleCPU and TimingSimpleCPU. It can not be run on its own. One of the inheriting classes, either AtomicSimpleCPU or TimingSimpleCPU must be used. BaseSimpleCPU defines functions for checking for interrupts, setting up a fetch request, handling pre-execute setup, handling post-execute actions, and advancing the PC to the next instruction and holds architected state, stats common across the SimpleCPU models. It is also responsible for the ExecContext interface which reovides information regarding the status of the execution.
+    > This version of SimpleCPU is a single cycle CPU which means it can execute only one instruction in a cycle. It can be inheritedd by AtomicSimpleCPU and TimingSimpleCPU. It can not be run on its own. One of the inheriting classes, either AtomicSimpleCPU or TimingSimpleCPU must be used. BaseSimpleCPU defines functions for checking for interrupts, setting up a fetch request, handling pre-execute setup, handling post-execute actions, and advancing the PC to the next instruction and holds architected state, stats common across the SimpleCPU models. It is also responsible for the ExecContext interface which is used by the instructions to access the CPU.
  
       * AtomicSimpleCPU:
      
