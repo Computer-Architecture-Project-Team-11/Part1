@@ -149,11 +149,16 @@
         ```
 
    b. Comparing the simulations run with MinorCPU and TimingSimpleCPU we noticed the following:
-     * differencies:  
-      * host_seconds: 0.78 for TimingSimpleCPU and 2,09 for MinorCPU  
-      * sim_seconds: 0.000692 for TimingSimpleCPU and 0,000333 for MinorCPU  
-      * Number of indirect misses: 138 for MinorCPU and it is not mentioned for TimingSimpleCPU  
-     * 
+     * Differencies:  
+       * host_seconds: 0.78 for TimingSimpleCPU and 2,09 for MinorCPU  
+       * sim_seconds: 0.000692 for TimingSimpleCPU and 0,000333 for MinorCPU  
+       * Number of indirect misses: 138 for MinorCPU and it is not mentioned for TimingSimpleCPU  
+     * Similarities:
+       * sim_freq: 1000000000000 for both CPUs
+       * host_mem_usage: 674144 for TimingSimpleCPU and 678752 for MinorCPU
+       * Number of instructions commited: 445920 for TimingSimpleCPU and 445973 for MinorCPU
+     The differencies are mostly related to time. They are justified considering the fact that TimingSimpleCPU lacks in speed in comparison to MinorCPU.
+     The similarities are also justified because they concern parameters that are controled by either the program or the intruction given.
    c. srthdhrg
 
 
