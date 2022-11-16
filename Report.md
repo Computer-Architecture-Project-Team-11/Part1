@@ -138,7 +138,22 @@
            $ ./build/ARM/gem5.opt -d fib_results_TimingSimpleCPU configs/example/se.py --cpu-type=TimingSimpleCPU --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
          ```
 
-   b. srhttjdtn
+      Times of execution:
+      * MinorCPU
+        ```
+        sim_seconds                                  0.000333                       # Number of seconds simulated
+        ```
+      * TimingSimpleCPU
+         ```
+        sim_seconds                                  0.000692                       # Number of seconds simulated
+        ```
+
+   b. Comparing the simulations run with MinorCPU and TimingSimpleCPU we noticed the following:
+     * differencies:  
+      * host_seconds: 0.78 for TimingSimpleCPU and 2,09 for MinorCPU  
+      * sim_seconds: 0.000692 for TimingSimpleCPU and 0,000333 for MinorCPU  
+      * Number of indirect misses: 138 for MinorCPU and it is not mentioned for TimingSimpleCPU  
+     * 
    c. srthdhrg
 
 
