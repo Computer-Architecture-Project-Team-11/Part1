@@ -195,3 +195,9 @@ Resources:
 * [CPU Models](https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU#basesimplecpu)
 
 
+Overall review:
+We found that this lab exercise was educating on many levels.  
+Firstly, we got acquainted with GitHub and Markdown language, which seems to be a usefull skill to possess for our future projects and a great way to organize our work.  
+Also, we were able to understand the effect of using different CPU models and changing different parameters can have on the execution of a program, mainly on the simulation time. 
+
+
