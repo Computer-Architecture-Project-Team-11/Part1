@@ -55,17 +55,20 @@
          ```
           sim_freq                                 1000000000000                       # Frequency of simulated ticks
          ```
-      * memory type
       * from `config.ini` we can see that there are 2 memory channels:
          ```
          memories=system.mem_ctrls0 system.mem_ctrls1
          ```
+         The type for both channels is:
+          ```
+          type=DRAMCtrl
+         ```
+      
       * from `config.ini` the number of memory ranks per channel is 2 for both memory channels
          ```
           [system.mem_ctrls0]/[system.mem_ctrls1]
           ranks_per_channel=2
          ```
-      * memory size
 
    b. 
       * sim_seconds: the time in seconds that the simulation needs for execution
