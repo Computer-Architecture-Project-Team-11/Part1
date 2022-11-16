@@ -93,7 +93,7 @@
        
 
    d.  from `starter_se.py` and because the type of the CPU is "minor" the L2 Cache class is "devices.L2".
-       From `statistics.tct` the L2 accesses are the following:
+       From `statistics.txt` the L2 accesses are the following:
 
        
        system.cpu_cluster.l2.overall_accesses::.cpu_cluster.cpus.inst          327                       # number of overall (read+write) accesses
@@ -179,16 +179,19 @@
            * Finally this memory type seems to have an small affect on the indirect misses since they are increamented by 1.
 
       * Different Operational Frequency:
-         * For the TimingSimpleCPU we used
-         * For the MinorCPU we used
-
-
-
-
+         * For the TimingSimpleCPU we set the frequency to 4GHz:
+            ```
+            $ ./build/ARM/gem5.opt -d fib_results_TimingSimpleCPU4GHz configs/example/se.py --cpu-type=TimingSimpleCPU --cpu-clock=4GHz --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
+             ```
+         * For the MinorCPU we set the frequency to 4GHz:
+            ```
+            $ ../build/ARM/gem5.opt -d fib_results_MinorCPU4GHz configs/example/se.py --cpu-type=MinorCPU --cpu-clock=4GHz --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
+             ```
+          The operational frequency refers to the processor's operational clock cycles per second. This means that by increamenting the frequency the execution must be faster. We can confirm that by the results on the `statistics.txt` file. More specifically we observed subduplication of the total simulated time in both CPU models with the quadruplication of the operational frequency.
+        
 Resources:
 * [Committed instructions differencies](https://stackoverflow.com/questions/65010636/difference-between-committed-instructions-and-committed-ops)
 * [Committed instructions](https://my.eng.utah.edu/~cs6810/pres/12-6810-09.pdf)
 * [CPU Models](https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU#basesimplecpu)
-* 
 
 
