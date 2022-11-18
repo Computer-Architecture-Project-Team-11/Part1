@@ -168,14 +168,14 @@
           ```
           $ ./build/ARM/gem5.opt -d fib_results_TimingSimpleCPULPDDR2_S4_1066_1x32 configs/example/se.py --cpu-type=MinorCPU --mem-type=LPDDR2_S4_1066_1x32 --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
           ```
-          * There is a small increament in the time of execution for while using the "LPDDR2_S4_1066_1x32" memory type. Number of seconds simulated before = 0.000692 and after = 0.000700. 
-          * Also a decreament in the instruction rate is noticed: Simulator instruction rate before=574316  and after=561871. 
+          * There is a small increment in the time of execution for while using the "LPDDR2_S4_1066_1x32" memory type. Number of seconds simulated before = 0.000692 and after = 0.000700. 
+          * Also a decrement in the instruction rate is noticed: Simulator instruction rate before=574316  and after=561871. 
         * For the MinorCPU we used the "SimpleMemory" memory type:
           ```
            $ ./build/ARM/gem5.opt -d fib_results_MinorCPUSimpleMemory configs/example/se.py --cpu-type=MinorCPU --mem-type=SimpleMemory --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
           ```
-           * The instruction rate has decreased a lot in with the use of the "SimpleMemory" type. Specifically, simulator instruction rate before=213505  and after=151692. (respective decreament for the ops rate)
-           * The simulated time seems to be slighttly increased. Number of seconds simulated before = 0.000333 and after = 0.000326. 
+           * The instruction rate has decreased a lot in with the use of the "SimpleMemory" type. Specifically, simulator instruction rate before=213505  and after=151692. (respective decrement for the ops rate)
+           * The simulated time seems to be slighttly decreased. Number of seconds simulated before = 0.000333 and after = 0.000326. 
            * Finally this memory type seems to have an small affect on the indirect misses since they are increased by 1.
 
       * Different Operational Frequency:
