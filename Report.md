@@ -118,14 +118,14 @@
  
       * AtomicSimpleCPU:
      
-     >This version of SimpleCPU uses atomic memory accesses. It derives from BaseSimpleCPU and implements functions to read and write memory, as well as to tick,            meaning what happens in every CPU cycle. Also, it estimates the overall cache access time using the latency estimates from the atomic accesses. Lastly, the            AtomicSimpleCPU defines the port that is used to hook up to memory, and connects the CPU to the cache.  
+     >In this version of SimpleCPU atomic memory accesses are used. It derives from BaseSimpleCPU and uses functions to read and write memory, as well as to tick,  meaning what happens in every CPU cycle. Also, it determines the overall cache access time using the latency estimates from the atomic accesses. Lastly, the AtomicSimpleCPU defines which port is used to connect to memory, and attaches the CPU to the cache.  
        
       * TimingSimpleCPU:
 
     >This version of SimpleCPU uses timing memory accesses. Timing accesses are the most detailed access but they lack in speed (delay). With the sending of a request function at some time, a response function or a number of functions are scheduled at some time in the future to be executed. It derives from BaseSimpleCPU and and implements the same set of functions as AtomicSimpleCPU. It defines the port that is used to hook up to memory, and connects the CPU to the cache. It also defines the necessary functions for handling the response from memory to the accesses sent out. If the response is a NACK the procedure gets repeated.
       
     ii. Minor CPU:
-    >This in-order processor model has a fixed pipeline, but its data structures and execute behaviour are configurable. It provides a framework to match micro-            architecturally the model with similar processor which has strict in-order execution behaviour and visualises the position of an instruction in the pipeline            through the MinorTrace/minorview.py format/too. 
+    >This in-order processor model has a standar pipeline, but its data structures and execute behaviour are configurable. It provides a framework to match the model with a similar processor on a micro-architectural level which has strict in-order execution behaviour and visualises the position of an instruction in the pipeline using the MinorTrace/minorview.py format/too. 
 
    a. Commands for the `fibonacci.c` file:
 
