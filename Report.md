@@ -138,7 +138,7 @@
            $ ./build/ARM/gem5.opt -d fib_results_TimingSimpleCPU configs/example/se.py --cpu-type=TimingSimpleCPU --caches -c tests/test-progs/hello/bin/arm/linux/fibonacci
          ```
 
-      Times of execution:
+      Execution times:
       * MinorCPU
         ```
         sim_seconds                                  0.000333                       # Number of seconds simulated
